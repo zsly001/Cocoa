@@ -12,6 +12,7 @@
         <module>cocoa-util</module>
         <module>cocoa-thread</module>
         <module>cocoa-oop</module>
+        <module>cocoa-servlet</module>
     </modules>
     <packaging>pom</packaging>
 
