@@ -68,6 +68,9 @@ public class BeanProxy<T> implements InvocationHandler {
     }
 
     class PlainInvoker implements Invoker{
+
+
+
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             return null;
