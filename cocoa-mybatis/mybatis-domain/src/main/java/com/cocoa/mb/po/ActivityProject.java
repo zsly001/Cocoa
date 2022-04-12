@@ -1,6 +1,5 @@
-package com.cocoa.mb.app.po;
+package com.cocoa.mb.po;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 public class ActivityProject {

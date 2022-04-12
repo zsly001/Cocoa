@@ -2,8 +2,10 @@ package com.cocoa.mb.app;
 
 import com.cocoa.mb.app.mapper.ActivityProjectMapper;
 import com.cocoa.mb.app.mapper.ActivityTagMapper;
-import com.cocoa.mb.app.po.ActivityProject;
-import com.cocoa.mb.app.po.ActivityTag;
+import com.cocoa.mb.app.mapper.TmMapper;
+import com.cocoa.mb.po.ActivityProject;
+import com.cocoa.mb.po.ActivityTag;
+import com.cocoa.mb.po.Tm;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,6 +13,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.*;
 
 public class App1 {
@@ -133,6 +137,27 @@ public class App1 {
         }
     }
 
+
+    public static void tm1(){
+        try(SqlSession session = sessionFactory.openSession(true)){
+            long start = System.nanoTime();
+            TmMapper mapper = session.getMapper(TmMapper.class);
+            Tm t1 = mapper.get(1);
+            System.out.println(t1);
+            long end = System.nanoTime();
+            long nano = end-start;
+            System.out.println(nano);
+            Timestamp tmp = new Timestamp(nano);
+            System.out.println(tmp);
+            /*Tm tm = new Tm();
+            tm.setStartTime(new java.util.Date());
+            tm.setEndTime(new Timestamp(System.nanoTime()));
+            tm.setCreateAt(new Date(System.currentTimeMillis()));
+            int n = mapper.save(tm);
+            System.out.println(n);*/
+        }
+    }
+
     public static void main(String[] args) throws Exception{
 
 
@@ -145,7 +170,8 @@ public class App1 {
         //dyc1();
         //dyc2();
         //dyc3();
-        dyc5();
+        //dyc5();
+        tm1();
 
     }
 

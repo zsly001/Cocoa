@@ -15,8 +15,9 @@
     </settings>
 
     <typeAliases>
-        <typeAlias type="com.cocoa.mb.app.po.ActivityTag" alias="ActivityTag"/>
-        <typeAlias type="com.cocoa.mb.app.po.ActivityProject" alias="ActivityProject"/>
+        <typeAlias type="com.cocoa.mb.po.ActivityTag" alias="ActivityTag"/>
+        <typeAlias type="com.cocoa.mb.po.ActivityProject" alias="ActivityProject"/>
+        <typeAlias type="com.cocoa.mb.po.Tm" alias="Tm"/>
         <typeAlias type="com.cocoa.mb.app.datasource.HikariDataSourceFactory" alias="hikari"/>
     </typeAliases>
 
@@ -48,5 +49,6 @@
     <mappers>
         <mapper resource="mapper/ActivityTag.xml" />
         <mapper resource="mapper/ActivityProjectMapper.xml" />
+        <mapper resource="mapper/TmMapper.xml" />
     </mappers>
 </configuration>

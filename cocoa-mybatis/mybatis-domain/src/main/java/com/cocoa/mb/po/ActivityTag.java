@@ -1,7 +1,13 @@
-package com.cocoa.mb.app.po;
+package com.cocoa.mb.po;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
+@TableName("activity_tag")
 public class ActivityTag {
 
+    @TableId(type = IdType.AUTO)
     private Integer id;
 
     private Integer status;
