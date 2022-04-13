@@ -17,6 +17,8 @@ public class BeanProxyMain {
                 new Class[]{XxxMapper.class},
                 new BeanProxy<>(XxxMapper.class));
         System.out.println(mapper.info());
+        //System.out.println(mapper.getList());
+        System.out.println(mapper.mapper("hello mapper"));
     }
 
     public static void main(String[] args) {

@@ -10,8 +10,8 @@ public class DefaultProxyIntance implements IProxy{
     }
 
     @Override
-    public <T> T string(String str) {
-        return null;
+    public String string(String str) {
+        return "default-proxy : [ "+str+" ]";
     }
 
     @Override

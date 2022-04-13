@@ -44,6 +44,8 @@ public class BeanProxy<T> implements InvocationHandler {
         Object result = null;
         if(method.isDefault()){
             result = new DefaultInvoker(getMethodHandleJava8(method)).invoke(proxy,method,args);
+        }else {
+            result = new PlainInvoker(new DefaultProxyIntance()).invoke(proxy, method, args);
         }
         return result;
     }
@@ -69,12 +71,25 @@ public class BeanProxy<T> implements InvocationHandler {
 
     class PlainInvoker implements Invoker{
 
+        private IProxy iProxy;
 
+        public PlainInvoker(IProxy iProxy) {
+            this.iProxy = iProxy;
+        }
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+            if(exists(method)){
+                return iProxy.string((String)args[0]);
+            }
             return null;
         }
+
+        private boolean exists(Method method){
+            Str annotation = method.getDeclaredAnnotation(Str.class);
+            return null != annotation;
+        }
+
     }
 
     interface Invoker{

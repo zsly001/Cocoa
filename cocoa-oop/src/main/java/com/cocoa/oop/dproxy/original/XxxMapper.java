@@ -8,6 +8,9 @@ public interface XxxMapper {
 
     int count();
 
+    @Str
+    String mapper(String str);
+
     default String info(){
         return "mapper info";
     }
