@@ -14,6 +14,7 @@
         <module>cocoa-oop</module>
         <module>cocoa-servlet</module>
         <module>cocoa-mybatis</module>
+        <module>cocoa-algo</module>
     </modules>
     <packaging>pom</packaging>
 
