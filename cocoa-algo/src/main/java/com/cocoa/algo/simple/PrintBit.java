@@ -23,8 +23,16 @@ public class PrintBit {
     }
 
     public static void main(String[] args) {
-        System.out.println(printBitInteger(-1));
-        System.out.println(printBitLong(Long.MIN_VALUE));
+        int a = 1;
+        int n = 63;
+        int value = a | n;
+        System.out.println(printBitInteger(a));
+        System.out.println(printBitInteger(n));
+        System.out.println(printBitInteger(value));
+        System.out.println(value);
+        System.out.println(printBitLong((1L<<42L)));
+        System.out.println(printBitLong(~(1L<<42L)));
+        //System.out.println(printBitLong(Long.MIN_VALUE));
     }
 
 }
