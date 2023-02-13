@@ -1,5 +1,8 @@
 package com.cocoa.bean.obj;
 
+import java.util.List;
+import java.util.Optional;
+
 public class User {
 
     private int id;
@@ -11,6 +14,12 @@ public class User {
     private int gender;
 
     private String phone;
+
+    private List<Integer> interests;
+
+    private List<Company> companies;
+
+    private Organization organization;
 
     public User() {
     }
@@ -72,5 +81,29 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public List<Integer> getInterests() {
+        return interests;
+    }
+
+    public void setInterests(List<Integer> interests) {
+        this.interests = interests;
+    }
+
+    public List<Company> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(List<Company> companies) {
+        this.companies = companies;
+    }
+
+    public Optional<Organization> getOrganization() {
+        return Optional.ofNullable(organization);
+    }
+
+    public void setOrganization(Organization organization) {
+        this.organization = organization;
     }
 }
