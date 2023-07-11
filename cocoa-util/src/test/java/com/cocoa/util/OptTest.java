@@ -5,10 +5,7 @@ import com.cocoa.bean.obj.Organization;
 import com.cocoa.bean.obj.User;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -27,7 +24,8 @@ public class OptTest {
         o.setId(1);
         o.setName("组织");
         user.setOrganization(o);
-        user.setCompanies(Arrays.asList(new Company(1,"baidu"),new Company(2,"jd")));
+        user.setCompanies(Arrays.asList(new Company(1,"baidu"),new Company(2,"jd"),null));
+        user.setCompanies(Arrays.asList(new Company(1,"baidu"),new Company(2,"jd"),null));
 
         User u1 = null;
 
@@ -42,8 +40,13 @@ public class OptTest {
         List<Company> companies = Optional.ofNullable(u1).map(User::getCompanies).orElse(new ArrayList<>());
         System.out.println(companies);
 
-        List<String> compayNames = Optional.ofNullable(user).map(User::getCompanies).orElse(new ArrayList<>()).stream().map(Company::getName).collect(Collectors.toList());
+        List<String> compayNames = Optional.ofNullable(user)
+                .map(User::getCompanies).orElse(new ArrayList<>())
+                .stream().filter(Objects::nonNull).
+                        filter(e->e.getId()<20).map(Company::getName).collect(Collectors.toList());
         System.out.println(compayNames);
+
+
     }
 
 
