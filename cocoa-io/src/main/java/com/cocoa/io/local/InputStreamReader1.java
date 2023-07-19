@@ -19,6 +19,7 @@ public class InputStreamReader1 extends InputStream {
         buf = ByteBuffer.allocate(size);
     }
 
+
     @Override
     public int read() throws IOException {
 

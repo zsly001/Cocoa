@@ -25,12 +25,7 @@ public class SimpleOptional {
         return f2(n-1)+f2(n-2);
     }
 
-    public static int f3(){
-        int count=0;
-        for(int x = 0 , y = 0; !x && y <= 5 ; y++){
 
-        }
-    }
 
 
 
