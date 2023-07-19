@@ -21,6 +21,8 @@ public class User {
 
     private Organization organization;
 
+    private Company company;
+
     public User() {
     }
 
@@ -105,5 +107,13 @@ public class User {
 
     public void setOrganization(Organization organization) {
         this.organization = organization;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
     }
 }
